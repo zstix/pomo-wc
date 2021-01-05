@@ -2,7 +2,7 @@ import { LitElement, html, property, css, customElement } from 'lit-element';
 
 @customElement('pomo-time')
 export class PomoTime extends LitElement {
-  @property({ type: Number }) time = 0;
+  @property({ type: Number }) time: number;
 
   static get styles() {
     return css`
