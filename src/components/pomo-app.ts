@@ -1,7 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 
-@customElement('wc-pomo')
-export class WCPomo extends LitElement {
+@customElement('pomo-app')
+export class PomoApp extends LitElement {
   static get styles() {
     return css`
       .app {
