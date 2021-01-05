@@ -1,4 +1,5 @@
 import { LitElement, html, property, css, customElement } from 'lit-element';
+import { timeToString } from '../utils';
 
 @customElement('pomo-time')
 export class PomoTime extends LitElement {
@@ -14,20 +15,7 @@ export class PomoTime extends LitElement {
     `;
   }
 
-  // TODO: move to util class?
-  private _pad(num: number): string {
-    const str = num.toString(10);
-    return str.length === 2 ? str : "0" + str;
-  }
-
-  // TODO: move to util class?
-  private get _timeString(): string {
-    const minutes = this._pad(Math.floor(this.time / 60));
-    const seconds = this._pad(this.time % 60);
-    return `${minutes}:${seconds}`;
-  }
-
   render() {
-    return html`<h1>${this._timeString}</h1>`;
+    return html`<h1>${timeToString(this.time)}</h1>`;
   }
 }
